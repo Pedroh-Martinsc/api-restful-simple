@@ -49,7 +49,7 @@ public class User {
     @Size(groups = CreateUser.class, min = 8, max = 60) // Definindo valores maximos e minimos do password em tempo real
     private String password;
 
-    // Um usuario pode ter varias tasks e anotação para mapear de quem é as tasks baseado na variavel user da classe task
+    // Um usuario pode ter varias tasks e anotação para mapear de quem é as tasks baseado na variavel user da classe task.
     @OneToMany(mappedBy = "user")
     private List<Task> taks = new ArrayList<Task> ();
 
