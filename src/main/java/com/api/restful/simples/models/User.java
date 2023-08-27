@@ -12,16 +12,16 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity // Definindo essa classe como uma entidade
-@Table(name = User.TABLE_NAME) // Definindo a criação da tabela com o nome de "user"
-public class User {
+    @Table(name = com.api.restful.simples.models.User.TABLE_NAME) // Definindo a criação da tabela com o nome de "user"
+    public class User {
 
-    public interface CreateUser { // Inteface para validação do not null, not empty e size
-    }
+        public interface CreateUser { // Inteface para validação do not null, not empty e size
+        }
 
-    public interface UpdateUser { // Inteface para validação do not null, not empty e size
-    }
+        public interface UpdateUser { // Inteface para validação do not null, not empty e size
+        }
 
-    public static final String TABLE_NAME = "user";
+        public static final String TABLE_NAME = "user";
 
     @Id // Definindo o id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Anotação estrategio para gerar o id no banco de dados "incremento"
@@ -96,7 +96,7 @@ public class User {
         this.taks = taks;
     }
 
-    // Criação dos equals e HashCode para verficações e validações do objeto
+    // Criação dos equals e HashCode para verficações e validações do objeto.
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
