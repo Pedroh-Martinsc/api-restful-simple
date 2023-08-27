@@ -1,4 +1,4 @@
-// Criando o primeiro modelo do projeto
+// Criando o primeiro modelo do projeto.
 package com.api.restful.simples.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
