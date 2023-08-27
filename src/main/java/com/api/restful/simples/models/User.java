@@ -8,6 +8,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity // Definindo essa classe como uma entidade
@@ -48,7 +49,9 @@ public class User {
     @Size(groups = CreateUser.class, min = 8, max = 60) // Definindo valores maximos e minimos do password em tempo real
     private String password;
 
-    //private List<Task> taks = new ArrayList<Task> ();
+    // Um usuario pode ter varias tasks e anotação para mapear de quem é as tasks baseado na variavel user da classe task
+    @OneToMany(mappedBy = "user")
+    private List<Task> taks = new ArrayList<Task> ();
 
     // Criação dos metodos - construtor vazio spring
     public User() {
@@ -83,6 +86,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Task> getTaks() {
+        return taks;
+    }
+
+    public void setTaks(List<Task> taks) {
+        this.taks = taks;
     }
 
     // Criação dos equals e HashCode para verficações e validações do objeto
