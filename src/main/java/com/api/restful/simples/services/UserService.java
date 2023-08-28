@@ -35,7 +35,7 @@ public class UserService {
         return obj;
     }
 
-    // Metodo para update do usuario
+    // Metodo para update do usuario.
     public User update(User obj) {
         User newObj = findById ( obj.getId () );
         newObj.setPassword ( obj.getPassword () );
