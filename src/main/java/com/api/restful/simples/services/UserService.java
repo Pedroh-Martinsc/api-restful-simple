@@ -25,7 +25,6 @@ public class UserService {
         ) );
     }
 
-    // Criar usuario
     @Transactional // Anotação para persistencia no DB
     // Metodo para criação de usuario
     public User create(User obj) {
